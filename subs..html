@@ -89,6 +89,49 @@
     <p><strong>Manager:</strong> Brian</p>
     <p><strong>Phone:</strong> 08123456789</p>
   </section>
+  <!--form script total and checkbox-->
+  <script>
+    function updateTotal() {
+      const checkboxes_delivery = document.querySelectorAll('input[name="delivery-days"]:checked').length;
+      const checkboxes_meal = document.querySelectorAll('input[name="meal-type"]:checked').length;
+      const plan = document.querySelector('select[name="plan"]').value;
+
+      let price = 0;
+      if (plan === "Protein") {
+        price = 40000;
+      } else if (plan === "Diet") {
+        price = 30000;
+      } else if (plan === "Royal") {
+        price = 60000;
+      }
+
+      let total = price * checkboxes_delivery * checkboxes_meal * 4.3;
+      let formatted = new Intl.NumberFormat('de-DE').format(total);
+      document.getElementById("total").textContent = "Total: " + formatted;
+    }
+    document.getElementById("subscription").addEventListener("change", updateTotal);
+
+    document.getElementById("subscription").addEventListener("submit", function(event) {
+      const checkboxes = document.querySelectorAll('input[name="delivery-days"]:checked');
+      
+      if (checkboxes.length === 0) {
+        event.preventDefault();
+        document.getElementById("error1").textContent = "Please select at least one day.";
+      } else {
+        document.getElementById("error1").textContent = "";
+      }
+    });
+    document.getElementById("subscription").addEventListener("submit", function(event) {
+      const checkboxes = document.querySelectorAll('input[name="meal-type"]:checked');
+      
+      if (checkboxes.length === 0) {
+        event.preventDefault();
+        document.getElementById("error2").textContent = "Please select at least one meal option.";
+      } else {
+        document.getElementById("error2").textContent = "";
+      }
+    });
+  </script>
 
 </body>
 </html>
