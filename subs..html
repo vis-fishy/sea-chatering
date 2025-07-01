@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sea Chatering</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/subs.css">
 </head>
 <body>
   <!--navigation system-->
@@ -20,6 +21,68 @@
   <header><h1>SEA Catering</h1>
     <p>“Healthy Meals, Anytime, Anywhere”</p>
   </header>
+  <!--subs form section-->
+  <section class="border">
+    <form action="index.html" method="get" target="_self" id="subscription">
+      <h2>Subscription Form</h2>
+      <label for="name">Name :</label>
+      <input type="text" name="name" placeholder="Full Name" required>
+
+      <label for="phone-number">Active Phone Number :</label>
+      <input type="number" name="phone-number" placeholder="Insert Your Phone Number" required>
+
+      <label for="plan">Plan Selection :</label>
+      <select name="plan" required>
+        <option value="" disabled selected hidden>Pick a Plan</option>
+        <option value="Diet">Diet Plan - Rp30.000,00 per meal</option>
+        <option value="Protein">Protein Plan - Rp40.000,00 per meal</option>
+        <option value="Royal">Royal Plan - Rp60.000,00 per meal</option>
+      </select>
+
+      <label for="meal-type">Meal Type :</label>
+      <div id="checkbox">
+        <input type="checkbox" value="breakfast" name="meal-type">
+        <label for="breakfast">Breakfast</label>
+        <input type="checkbox" value="lunch" name="meal-type">
+        <label for="breakfast">Lunch</label>
+        <input type="checkbox" value="dinner" name="meal-type">
+        <label for="breakfast">Dinner</label>
+      </div>
+
+      <label for="delivery-days">Delivery Days :</label>
+      <div id="checkbox">
+        <input type="checkbox" value="monday" name="delivery-days">
+        <label for="breakfast">Monday</label>
+        <input type="checkbox" value="tuesday" name="delivery-days">
+        <label for="breakfast">Tuesday</label>
+        <input type="checkbox" value="wednesday" name="delivery-days">
+        <label for="breakfast">Wednesday</label>
+        <input type="checkbox" value="thursday" name="delivery-days">
+        <label for="breakfast">Thursday</label>
+        <input type="checkbox" value="friday" name="delivery-days">
+        <label for="breakfast">Friday</label>
+        <input type="checkbox" value="saturday" name="delivery-days">
+        <label for="breakfast">Saturday</label>
+        <input type="checkbox" value="sunday" name="delivery-days">
+        <label for="breakfast">Sunday</label>
+      </div>
+
+      <label for="alergies">Alergies :</label>
+      <textarea name="alergies" cols="30" rows="10"></textarea>
+
+      <div id="checkbox">
+        <input type="checkbox" required>
+        <label for="persetujuan">You agree with our terms and conditions</label>
+      </div>
+
+      <p id="total"></p>
+
+      <input type="submit" value="Submit">
+      <input type="reset">
+      <p id="error1"></p>
+      <p id="error2"></p>
+    </form>
+  </section>
   <!--contact section-->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
