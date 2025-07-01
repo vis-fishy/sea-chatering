@@ -58,6 +58,25 @@
       <button onclick="nextSlide()">&#10095;</button>
     </div>
   </section>
+  <!--testimonial add form-->
+  <section class="border">
+    <form action="index.html" method="get" target="_self" id="subscription">
+      <h2>Add Testimonials</h2>
+      <label for="name">Name :</label>
+      <input type="text" name="name" placeholder="Full Name" required>
+
+      <label for="testimoni">Testimoni :</label>
+      <textarea name="testimoni" cols="30" rows="10" required></textarea>
+
+      <div id="checkbox">
+        <input type="checkbox" value="agree" name="agreement" required>
+        <label for="persetujuan">You agree with our terms and conditions</label>
+      </div>
+
+      <input type="submit" value="Submit">
+      <input type="reset">
+    </form>
+  </section>
   <!--contact section-->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
